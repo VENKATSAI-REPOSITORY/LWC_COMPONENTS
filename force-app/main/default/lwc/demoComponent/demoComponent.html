@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-left_medium">
+        <lightning-input type="text" label="Enter age" style="width:20rem" onchange={changeAge}></lightning-input>
+        <template if:true={status}>
+           <h1 class="mjr">You are a major, your age is: {age}</h1>
+        </template>
+        <template if:false={flag}>
+        <template if:false={status}>
+            <h1 class="mnr">You are a minor, your age is: {age}</h1>
+        </template>
+    </template>
+        </div>
+    </lightning-card>
+</template>

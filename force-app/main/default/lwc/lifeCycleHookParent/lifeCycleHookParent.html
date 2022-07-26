@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium">
+            <template if:false={status}>
+                <lightning-button label="Show Child" variant="brand" onclick={changeHandler}></lightning-button>
+            </template>
+            <template if:true={status}>
+                <lightning-button label="Remove Child" variant="destructive" onclick={changeHandler}></lightning-button>
+            </template>
+            <template if:true={status}>
+                <c-life-cycle-hook-child></c-life-cycle-hook-child>
+            </template>
+        </div>
+        </lightning-card>
+</template>

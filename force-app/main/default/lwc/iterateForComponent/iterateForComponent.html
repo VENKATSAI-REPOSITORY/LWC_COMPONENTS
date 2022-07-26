@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Learn Iterate">
+<template iterator:it={fdNames}>
+<h1 key={it.value}>{it.value}</h1>
+</template>
+<template for:each={cmpData} for:item="data">
+    <h1 key={data}>{data.name}</h1>
+</template>
+    </lightning-card>
+</template> 

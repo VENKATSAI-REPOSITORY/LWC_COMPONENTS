@@ -1,0 +1,21 @@
+<template>
+<lightning-card title="Connect Apex Class"  icon-name="custom:custom63">
+    <div class="slds-m-around_medium">
+        <lightning-input style="width:15rem" label="Account name" onchange={changeName}></lightning-input><br/>
+        <lightning-input style="width:15rem" label="Annual Revenue" onchange={changeAnlRvn}></lightning-input><br/><br/>
+        <template if:true={acts.data}>
+<template for:each={acts.data} for:item="acc">
+<p key={acc.Id} style="color:green;font-size:15px">
+{acc.Name}&nbsp;&nbsp;&nbsp;
+{acc.Phone}&nbsp;&nbsp;&nbsp;
+{acc.Industry}&nbsp;&nbsp;&nbsp;
+{acc.AnnualRevenue}&nbsp;&nbsp;&nbsp;
+</p>
+</template>
+</template>
+<template if:true={acts.error}>
+<p style="color:red;font-size:15px">Sorry no records</p>
+</template>
+    </div>
+</lightning-card>
+</template>

@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Salary Calculator">
+        <div class="slds-p-around_medium">
+        <lightning-input style="width:15rem" label="Enter Basic Salary" type="number" onchange={bsalhandler}></lightning-input>
+        <lightning-checkbox-group
+                name="chalw"
+                label="Choose Allowances"
+                options={cbOptions}
+                value=""
+                onchange={checkboxHandler}>
+        </lightning-checkbox-group><br/>
+        <lightning-radio-group name="csty"
+                          label="Choose Salary type"
+                          options={rbOptions}
+                          value=""
+                          type="radio"
+                          onchange={radioboxHandler}>
+        </lightning-radio-group><br/>
+        <lightning-button label="Submit" variant="brand" onclick={salaryCalculator}>
+        </lightning-button>
+        <br/>
+        <template if:true = {gsStatus}>
+            Your Gross Salary is: {gsSalary}
+        </template>
+        <template if:true = {nsStatus}>
+            Your Net Salary is: {nsSalary}
+        </template>
+    </div>
+    </lightning-card>
+</template>
